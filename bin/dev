@@ -5,4 +5,7 @@ if ! gem list foreman -i --silent; then
   gem install foreman
 fi
 
+rm -rf public/assets
+rm -rf public/vite-dev
+kill -9 $(ps aux | grep '[p]uma' | awk '{print $2}')
 exec foreman start -f Procfile.dev "$@"

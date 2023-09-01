@@ -1,0 +1,50 @@
+# inherit_from: .rubocop_todo.yml
+
+require:
+  - rubocop-rails
+  - rubocop-rspec
+  - rubocop-performance
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - 'bin/**/*'
+    - 'db/**/*'
+    - 'node_modules/**/*'
+    - 'spec/fixtures/**/*'
+    - 'tmp/**/*'
+    - 'vendor/**/*'
+
+Rails/UniqueValidationWithoutIndex:
+  Enabled: false
+
+Metrics/BlockLength:
+  CountComments: false
+  Exclude:
+    - 'lib/**/*'
+    - 'config/**/*'
+    - 'spec/**/*'
+    - 'app/views/**/*.jbuilder'
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/MethodLength:
+  CountComments: false
+
+Naming/MethodParameterName:
+  AllowedNames:
+    - e
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Enabled: false
+
+RSpec/DescribeClass:
+  Exclude:
+    - 'spec/lib/**/*'
